@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    @@include('_header.html')
+    <main>
+        <div class="modal">
+            <form class="modal__content">
+                <div class="modal__add-products add-form">
+                    <div class="add-form__title">Adding more products</div>
+                    <div class="add-form__note">The more items you check, the better the price.</div>
+                    <ul class="add-form__list list-add">
+                        <li class="list-add__item">
+                            <label class="list-add__label">
+                                <input type="radio" class="list-add__input" value='5' name="product-value"
+                                    data-price="80" checked>
+                                <span class="list-add__span"></span>
+                                <div class="list-add__text">
+                                    <div class="list-add__name">5 products for 80 usd / 16$ for each</div>
+                                    <div class="list-add__descr">You safe 36% on each patent check </div>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="list-add__item">
+                            <label class="list-add__label">
+                                <input type="radio" class="list-add__input" value='4' name="product-value"
+                                    data-price="72">
+                                <span class="list-add__span"></span>
+                                <div class="list-add__text">
+                                    <div class="list-add__name">4 products for 72 usd / 18$ for each</div>
+                                    <div class="list-add__descr">You safe 28% on each patent check </div>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="list-add__item">
+                            <label class="list-add__label">
+                                <input type="radio" class="list-add__input" value='3' name="product-value"
+                                    data-price="60">
+                                <span class="list-add__span"></span>
+                                <div class="list-add__text">
+                                    <div class="list-add__name">3 products for 60 usd / 20$ for each</div>
+                                    <div class="list-add__descr">You safe 20% on each patent check </div>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="list-add__item">
+                            <label class="list-add__label">
+                                <input type="radio" class="list-add__input" value='2' name="product-value"
+                                    data-price="44">
+                                <span class="list-add__span"></span>
+                                <div class="list-add__text">
+                                    <div class="list-add__name">2 products for 44 usd / 22$ for each</div>
+                                    <div class="list-add__descr">You safe 12% on each patent check </div>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="list-add__item">
+                            <label class="list-add__label">
+                                <input type="radio" class="list-add__input" value='1' name="product-value"
+                                    data-price="24.99">
+                                <span class="list-add__span"></span>
+                                <div class="list-add__text">
+                                    <div class="list-add__name">1 product for 24.99 usd</div>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                    <div class="add-form__button">
+                        <button class="btn-primary" id="add-products">Continue</button>
+                    </div>
+                </div>
+                <div class="modal__form modal-form">
+                    <div class="modal-form__user user-info">
+                        <div class="user-info__title">Info</div>
+                        <label for="user-info" class="user-info__label">Enter your email address</label>
+                        <input type="email" class="user-info__input" id="user-info"
+                            placeholder="team@checkforpatent.com">
+                    </div>
+                    <div class="modal-form__products product">
+                        <ul class="product__list">
+                            <li class="product__item" data-productId="1">
+                                <div class="product__top">
+                                    <div class="product__title">Product 1</div>
+                                    <button class="product__remove" data-removeId="1"></button>
+                                </div>
+                                <div class="product__description desc-product">
+                                    <div class="desc-product__item">
+                                        <label for="product1-keyword" class="desc-product__label">
+                                            Enter main keyword for the product
+                                        </label>
+                                        <input type="text" class="desc-product__input" id="product1-keyword"
+                                            placeholder="for example, sylicon wine cup">
+                                    </div>
+                                    <div class="desc-product__item">
+                                        <label for="product1-link" class="desc-product__label">
+                                            Enter link to the similar product as a reference
+                                        </label>
+                                        <input type="text" class="desc-product__input" id="product1-link"
+                                            placeholder="https://...">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-form__add-product product-add">
+                        <button class="product-add__btn" id="show-add-products">Add more products</button>
+                    </div>
+                    <div class="modal-form__discount">We offer discount up to 36% for multiple checks</div>
+                    <div class="modal-form__button submit-wrapper">
+                        <button type="submit" class="btn-primary" id="btn-submit">
+                            Submit and Pay 24.99 USD
+                        </button>
+                        <div class="submit-wrapper__protect">Secure payment with Stripe</div>
+                    </div>
+                </div>
+                <div class="modal__success info-tab">
+                    <div class="info-tab__title">Successfull payment</div>
+                    <div class="info-tab__note">Your request has been accepted and will be processed within 24 working
+                        hours. We will send you a payment details and all information to your email.</div>
+                    <div class="info-tab__image">
+                        <img src="./img/card.svg" alt="Successfull payment">
+                    </div>
+                    <div class="info-tab__button">
+                        <button class="btn-primary" id="btn-back">Back</button>
+                    </div>
+                </div>
+                <div class="modal__failed info-tab">
+                    <div class="info-tab__title">Your payment failed</div>
+                    <div class="info-tab__note">Sorry, but we’ve having trouble processing your payment. You have been
+                        not charged for this transaction.</div>
+                    <div class="info-tab__image">
+                        <img src="./img/cards.svg" alt="Your payment failed">
+                    </div>
+                    <div class="info-tab__button">
+                        <button class="btn-warning" id="btn-repay">Try to pay again</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    @@include('_footer.html')
+    @@include('_modal.html')
+
+
+    <script src="js/script.min.js"></script>
+</body>
+
+</html>

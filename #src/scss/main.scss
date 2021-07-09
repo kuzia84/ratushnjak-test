@@ -1,0 +1,61 @@
+:root {
+  --shadow: #e2e7ff;
+  --white: #fff;
+  --black: #000;
+  --green: #23c967;
+  --green2: #1fa757;
+  --red: #ea717f;
+  --red2: #ad545f;
+  --text-color: #1c154e;
+  --text-color2: #494471;
+  --text-gray: #a7a2cb;
+  --text-gray2: #afb4cc;
+  --border-color: #dddfed;
+  --placeholder-color: #d0d3e2;
+  --bg-gray: #f4f5fa;
+}
+body {
+  font-family: "Gilroy", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  color: var(--black);
+  background: #e5e5e5;
+}
+ul,
+li,
+p {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spiner {
+  width: 32px;
+  height: 32px;
+  background: url("../img/icons/spiner.svg") center / cover no-repeat;
+  animation: 1s rotate infinite linear;
+  margin: 0 auto;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
